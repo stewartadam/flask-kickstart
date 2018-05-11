@@ -1,6 +1,5 @@
 flask
 flask-restless
 flask-sqlalchemy
-flask-script
-eventlet
-celery
+flask-failsafe
+flask-limiter

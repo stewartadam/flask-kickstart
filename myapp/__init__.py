@@ -1,13 +1,20 @@
 import flask
-import flask.ext.sqlalchemy
+import flask_sqlalchemy
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 
-app = flask.Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
-app.config["DEBUG"] = True
-app.config["SECRET_KEY"] = 'a very long random string'
+app = flask.Flask(__name__, instance_relative_config=True)
+limiter = Limiter(
+  app,
+  key_func=get_remote_address
+)
 
-db = flask.ext.sqlalchemy.SQLAlchemy(app)
+app.config.from_object('myapp.config.DefaultConfig')
+app.config.from_pyfile('myapp.cfg', silent=True)
+app.config.from_envvar('CONFIG_FILE', silent=True)
 
-from myapp import api
-from myapp import views
-from myapp import models
+db = flask_sqlalchemy.SQLAlchemy(app)
+
+from . import api
+from . import models
+from . import views
