@@ -39,3 +39,8 @@ See [GrahamDumpleton/mod_wsgi-docker](https://github.com/GrahamDumpleton/mod_wsg
 The app is ready to deploy to App Service, just connect the Web App to your Git repo with these files in it.
 
 For more details, see [Git Publishing](https://docs.microsoft.com/en-us/azure/app-service/web-sites-python-configure#git-publishing) and [Create a Python web app in Azure](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-python).
+
+## Further reading
+* [Patterns for Flask](http://flask.pocoo.org/docs/1.0/patterns/)
+* [Damyan Bogoev's Flask Series](https://damyanon.net/post/flask-series-configuration/)
+* [flask-restful's Intermediate Usage page](http://flask-restful.readthedocs.io/en/latest/intermediate-usage.html)
