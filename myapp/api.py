@@ -4,7 +4,7 @@ from myapp import app, db
 from myapp.models import User
 
 # Create the Flask-Restless API manager.
-manager = flask_restless.APIManager(app, flask_sqlalchemy_db=db)
+manager = flask_restless.APIManager(app, session=db.session)
 
 # Create API endpoints, which will be available at /api/<tablename> by
 # default. Allowed HTTP methods can be specified as well.
